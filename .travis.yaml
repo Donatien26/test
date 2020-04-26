@@ -1,0 +1,11 @@
+  
+language: bash
+deploy:
+  - provider: script
+    script:
+      cat <<EOF> fichier
+ui:
+    image:
+        version: toto
+EOF
+      && echo fichier
