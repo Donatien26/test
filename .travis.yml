@@ -8,4 +8,4 @@ ui:
     image:
         version: toto
 EOF
-      && echo fichier
+      && echo fichier  && ls
