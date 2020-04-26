@@ -1,11 +1,12 @@
-  
-language: bash
+language: java
 deploy:
   - provider: script
     script:
       cat <<EOF> fichier
-ui:
-    image:
-        version: toto
-EOF
-      && echo fichier  && ls
+      api:
+        image:
+          version: latest
+      EOF
+      && git clone https://github.com/Donatien26/onyxia-chart.git onyxia 
+      && cp -f values-version-ui.yaml onyxia/values-version-ui.yaml 
+      && cd onyxia && git add . && git commit -m "upgrade version ui" && git push
